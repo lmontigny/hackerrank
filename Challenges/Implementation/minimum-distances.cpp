@@ -31,5 +31,20 @@ int main(){
     for(int i = 0;i < n;i++){
        cin >> A[i];
     }
+    
+    vector<int> vec;
+    for(int i = 0;i < n;i++){
+        for(int j = 0;j < n;j++){
+            if(A[i]==A[j] && i!=j){
+                vec.push_back(abs(i-j));
+            }
+        }
+    }
+    if(vec.size()>0){
+        cout << *min_element(vec.begin(), vec.end());
+    }
+    else {
+        cout << "-1";
+    }
     return 0;
 }
